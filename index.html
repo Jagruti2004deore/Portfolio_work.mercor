@@ -42,7 +42,7 @@ h1{font-size:clamp(46px,9vw,112px);font-weight:800;letter-spacing:-.035em;margin
 .lbl{position:absolute;left:0;top:0;pointer-events:auto;cursor:pointer;border:1px solid var(--c);color:var(--fg);background:#060914d0;border-radius:99px;padding:3px 12px;font:700 13px "DM Sans",sans-serif;white-space:nowrap;transition:opacity .3s,background .2s;will-change:transform}
 .lbl:hover,.lbl.on{background:var(--c);color:#04121a}
 body.focus .lbl:not(.on){opacity:.35}
-#panel{position:fixed;z-index:5;top:0;right:0;bottom:0;width:min(440px,100%);background:var(--panel);border-left:1px solid var(--line);padding:calc(26px + env(safe-area-inset-top,0px)) 26px calc(26px + env(safe-area-inset-bottom,0px));overflow-y:auto;transform:translateX(104%);transition:transform .55s cubic-bezier(.2,.8,.2,1)}
+#panel{position:fixed;z-index:5;top:0;right:0;bottom:0;width:min(580px,100%);background:var(--panel);border-left:1px solid var(--line);padding:calc(26px + env(safe-area-inset-top,0px)) 26px calc(26px + env(safe-area-inset-bottom,0px));overflow-y:auto;transform:translateX(104%);transition:transform .55s cubic-bezier(.2,.8,.2,1)}
 body.focus #panel{transform:none}
 #panel h2{font-size:34px;margin:4px 0 6px;letter-spacing:-.02em}
 .x{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:14px;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:none;color:var(--fg);font-size:20px;cursor:pointer}
@@ -264,10 +264,10 @@ function tick(){
   nodes.forEach((n,i)=>{n.ring.rotation.z+=dt*.8;const s=(hov===i||focused===i)?1.25:1;n.mesh.scale.lerp(new THREE.Vector3(s,s,s),dt*8);n.g.scale.setScalar(3.4+Math.sin(t*2+i)*.25)});
   packets.forEach(p=>{p.t=(p.t+dt*p.sp)%1;const f=p.dir>0?p.t:1-p.t;p.m.position.copy(p.end).multiplyScalar(f)});
   stars.rotation.y+=dt*.01;
-  if(focused>=0){nodes[focused].mesh.getWorldPosition(wp);const out=wp.clone().setY(0).normalize();tp.copy(wp).addScaledVector(out,3.6).add(new THREE.Vector3(0,.6,0));tl.copy(wp)}
+  if(focused>=0){nodes[focused].mesh.getWorldPosition(wp);const out=wp.clone().setY(0).normalize();tp.copy(wp).addScaledVector(out,8.5).add(new THREE.Vector3(0,1.6,0));tl.copy(wp)}
   else{tp.set(mx*1.4,1.6-my*.8,z);tl.set(0,0,0)}
   camera.position.lerp(tp,dt*2.4);lk.lerp(tl,dt*3);camera.lookAt(lk);
-  const tvx=focused>=0?(wide?W*.2:0):(wide?-W*.17:0),tvy=focused>=0?(wide?0:H*.2):(wide?0:-H*.14);
+  const tvx=focused>=0?(wide?W*.27:0):(wide?-W*.17:0),tvy=focused>=0?(wide?0:H*.3):(wide?0:-H*.14);
   vx+=(tvx-vx)*dt*3;vy+=(tvy-vy)*dt*3;camera.setViewOffset(W,H,vx,vy,W,H);camera.updateMatrixWorld();
   nodes.forEach(n=>{n.mesh.getWorldPosition(wp);wp.y-=.95;wp.project(camera);n.l.style.transform=`translate(${(wp.x*.5+.5)*W}px,${(-wp.y*.5+.5)*H}px) translate(-50%,0)`;n.l.style.display=wp.z>1?'none':''});
   canvas.style.opacity=focused>=0?1:Math.max(.12,1-scrollY/(H*.85));
