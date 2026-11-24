@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Jagruti Deore – Java Backend & Full Stack Developer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Jagruti Deore is a Java backend and full stack developer in Pune building secure applications and agentic AI systems. Available immediately.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#060914;--fg:#e9edf7;--mut:#93a0bd;--panel:#0c1224;--line:#ffffff1a;--cy:#22d3ee;--ok:#34d399;color-scheme:dark;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 16px/1.6 "DM Sans",system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:"Bricolage Grotesque","DM Sans",sans-serif;line-height:1.05;margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--cy);outline-offset:3px;border-radius:6px}
+#c{position:fixed;inset:0;width:100%;height:100%;z-index:0;touch-action:pan-y;display:block}
+.nogl #c,.nogl #labels{display:none}
+.nogl .hero{background:radial-gradient(60% 50% at 70% 40%,#22d3ee22,transparent),radial-gradient(50% 50% at 30% 70%,#818cf822,transparent)}
+.hero{position:relative;z-index:2;min-height:100svh;display:flex;flex-direction:column;justify-content:space-between;padding:22px clamp(20px,5vw,64px) 40px;pointer-events:none;transition:opacity .4s}
+.hero a,.hero button{pointer-events:auto}
+body.focus .hero .intro{opacity:0;transform:translateX(-24px);pointer-events:none}
+.nav{display:flex;justify-content:space-between;align-items:center}
+.brand{font:700 20px "Bricolage Grotesque",sans-serif;text-decoration:none}
+.nav nav{display:flex;gap:22px}
+.nav nav a{text-decoration:none;color:var(--mut);font-size:15px}
+.nav nav a:hover{color:var(--fg)}
+.intro{max-width:620px;transition:.5s}
+.status{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:99px;padding:5px 14px;font-size:14px;color:var(--mut);background:#060914aa}
+.status i{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 10px var(--ok)}
+h1{font-size:clamp(46px,9vw,112px);font-weight:800;letter-spacing:-.035em;margin:18px 0 14px}
+.lead{font-size:clamp(17px,2vw,21px);color:#c3cce2;max-width:30em;margin:0 0 26px}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-block;text-decoration:none;font-weight:700;font-size:15px;padding:11px 20px;border-radius:10px;border:1px solid var(--line);background:#0c1224cc;cursor:pointer;color:var(--fg);font-family:inherit}
+.btn.main{background:var(--cy);color:#04121a;border-color:var(--cy)}
+.btn:hover{filter:brightness(1.15)}
+.hint{font-size:14px;color:var(--mut);margin-top:22px;max-width:26em}
+#labels{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.lbl{position:absolute;left:0;top:0;pointer-events:auto;cursor:pointer;border:1px solid var(--c);color:var(--fg);background:#060914d0;border-radius:99px;padding:3px 12px;font:700 13px "DM Sans",sans-serif;white-space:nowrap;transition:opacity .3s,background .2s;will-change:transform}
+.lbl:hover,.lbl.on{background:var(--c);color:#04121a}
+body.focus .lbl:not(.on){opacity:.35}
+#panel{position:fixed;z-index:5;top:0;right:0;bottom:0;width:min(440px,100%);background:var(--panel);border-left:1px solid var(--line);padding:calc(26px + env(safe-area-inset-top,0px)) 26px calc(26px + env(safe-area-inset-bottom,0px));overflow-y:auto;transform:translateX(104%);transition:transform .55s cubic-bezier(.2,.8,.2,1)}
+body.focus #panel{transform:none}
+#panel h2{font-size:34px;margin:4px 0 6px;letter-spacing:-.02em}
+.x{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:14px;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:none;color:var(--fg);font-size:20px;cursor:pointer}
+.bar{height:4px;width:56px;border-radius:4px;background:var(--c);box-shadow:0 0 14px var(--c)}
+.sub{color:var(--mut);margin:0 0 18px}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:14px 0 18px}
+.flow span{border:1px solid var(--c);border-radius:8px;padding:4px 10px;font-size:13px;background:#ffffff08}
+.flow b{color:var(--mut);font-weight:400}
+.stats{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.stats span{background:color-mix(in srgb,var(--c) 18%,transparent);border-radius:8px;padding:5px 11px;font-weight:700;font-size:14px}
+#panel ul{padding-left:18px;margin:0 0 16px;color:#c3cce2}
+#panel li{margin-bottom:6px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:13px;color:var(--mut);border:1px solid var(--line);border-radius:6px;padding:2px 9px}
+.note{font-size:14px;color:var(--mut);border-left:3px solid var(--c);padding-left:12px;margin:16px 0}
+main{position:relative;z-index:2;background:linear-gradient(#060914cc,#060914f2 220px);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+section{max-width:1080px;margin:0 auto;padding:84px clamp(20px,5vw,40px) 12px}
+section h2{font-size:clamp(30px,5vw,48px);letter-spacing:-.025em;margin-bottom:26px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.card{border:1px solid var(--line);border-top:3px solid var(--c,var(--line));border-radius:12px;padding:20px;background:#0c1224aa;text-align:left;color:inherit;font:inherit}
+button.card{cursor:pointer}
+button.card:hover{background:#121b36}
+.card h3{font-size:22px;margin-bottom:6px}
+.card p{margin:0;color:var(--mut);font-size:15px}
+.xp{display:grid;gap:16px}
+.xp .card{border-top:1px solid var(--line);border-left:3px solid var(--cy)}
+.xp small{color:var(--mut)}
+.xp ul{margin:10px 0 0;padding-left:18px;color:#c3cce2}
+.sk{display:grid;gap:14px}
+.sk div{display:grid;grid-template-columns:150px 1fr;gap:10px;align-items:start}
+.sk b{color:var(--mut);font-weight:500}
+.contact{padding-bottom:70px}
+.contact p{font-size:20px;max-width:28em;color:#c3cce2;margin:0 0 22px}
+footer{text-align:center;color:var(--mut);font-size:14px;padding:30px 20px calc(40px + env(safe-area-inset-bottom,0px))}
+@media(max-width:900px){#panel{top:auto;width:100%;height:68svh;border-left:0;border-top:1px solid var(--line);border-radius:18px 18px 0 0;transform:translateY(104%)}
+.nav nav{display:none}.sk div{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition-duration:.01s!important}}
+</style>
+</head>
+<body>
+<canvas id="c" aria-hidden="true"></canvas>
+<div id="labels"></div>
+
+<header class="hero">
+  <div class="nav">
+    <a class="brand" href="#top">Jagruti Deore</a>
+    <nav><a href="#work">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav>
+  </div>
+  <div class="intro" id="top">
+    <span class="status"><i></i>Available immediately in Pune</span>
+    <h1>Jagruti Deore</h1>
+    <p class="lead">Java backend and full stack developer. I build secure Spring Boot systems and agentic AI apps, and every project below is a live service you can open.</p>
+    <div class="btns">
+      <a class="btn main" href="#work">See my projects</a>
+      <a class="btn" href="https://github.com/Jagruti2004deore" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="#contact">Contact me</a>
+      <a class="btn" id="resumeBtn" href="#" target="_blank" rel="noopener" hidden>Download resume</a>
+    </div>
+    <p class="hint">Each glowing node is one of my projects. Tap a node to fly into it.</p>
+  </div>
+</header>
+
+<aside id="panel" aria-live="polite" aria-label="Project details">
+  <button class="x" id="close" aria-label="Close project">×</button>
+  <div id="pbody"></div>
+</aside>
+
+<main>
+  <section id="work"><h2>Projects</h2><div class="grid" id="projGrid"></div></section>
+  <section id="experience"><h2>Experience</h2><div class="xp" id="xp"></div></section>
+  <section id="skills"><h2>Skills</h2><div class="sk" id="sk"></div></section>
+  <section class="contact" id="contact">
+    <h2>Let’s work together</h2>
+    <p>I’m looking for Java backend, full stack and Python developer roles, and I take freelance projects too. Open to relocation.</p>
+    <div class="btns">
+      <a class="btn main" href="mailto:deorejagruti284@gmail.com">deorejagruti284@gmail.com</a>
+      <a class="btn" href="https://linkedin.com/in/jagruti-deore-80282b319" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/Jagruti2004deore" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="https://leetcode.com/u/jagruti2004" target="_blank" rel="noopener">LeetCode</a>
+    </div>
+  </section>
+  <footer>Built with Three.js. Each project node is generated from one data list, so new projects appear on their own.</footer>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+/* ===== EDIT HERE: all site content lives in these lists ===== */
+const RESUME_URL = ""; // paste a link to your resume PDF to show the download button
+const PROJECTS = [
+ {id:"validator",name:"Startup Validator",tag:"Agentic AI research and verification platform",color:"#818cf8",
+  flow:["Startup idea","Research","Verify claims","Find gaps","Re-research","Score","Report"],
+  stats:["22/26 critic accuracy","9/9 code-rule cases","100+ backend tests","46 frontend tests"],
+  points:["A LangGraph agent researches an idea, checks claims against source text and goes back to fill evidence gaps.","Rule-based scoring with an 8-item evidence checklist, Pinecone memory and Pydantic-validated LLM output.","Shipped with API-key auth, daily usage limits, Docker, GitHub Actions CI and a Render deployment."],
+  stack:["Python","LangGraph","LangChain","FastAPI","Groq","Tavily","Pinecone","React","Docker"],
+  gh:"https://github.com/Jagruti2004deore/startup-validator",live:"https://startup-validator-web.onrender.com",
+  note:"Hosted on a free tier, so the first load can take up to a minute to wake up."},
+ {id:"repopilot",name:"RepoPilot AI",tag:"AI-powered GitHub repository analysis",color:"#22d3ee",
+  flow:["GitHub repo","Spring AI","Ollama local LLM","Review and Q&A"],
+  stats:["10+ REST APIs","JWT secured"],
+  points:["Import any public repo and get an architecture review, security analysis, code quality metrics and repository Q&A.","Spring AI with prompt engineering, Spring Security with JWT, GitHub API integration and PostgreSQL."],
+  stack:["Java","Spring Boot","Spring AI","Ollama","React","TypeScript","PostgreSQL"],
+  gh:"https://github.com/Jagruti2004deore/RepoPilot-AI",live:"https://repo-pilot-ai-alpha.vercel.app",
+  note:"The AI analysis runs on a local LLM (Ollama), so the hosted demo shows the interface and sign-in."},
+ {id:"collab",name:"CollabApp",tag:"Real-time interview collaboration platform",color:"#3b82f6",
+  flow:["React","STOMP WebSocket","Spring Boot","PostgreSQL"],
+  stats:["50+ concurrent users","3+ roles","40% faster deploys"],
+  points:["Live chat and presence, role-based rooms, WebRTC video calls and screen sharing.","Collaborative code editor and a synced whiteboard, secured with JWT and containerized with Docker."],
+  stack:["Spring Boot","React","WebSocket","WebRTC","PostgreSQL","JWT","Docker"],
+  gh:"https://github.com/Jagruti2004deore/Collab_App",live:"https://collab-9ebi0294m-jagruti-deores-projects.vercel.app",
+  note:""},
+ {id:"hams",name:"HAMS",tag:"Hospital appointment management system",color:"#34d399",
+  flow:["React","JWT","Spring Security RBAC","PostgreSQL"],
+  stats:["10+ REST APIs","500+ appointment records"],
+  points:["Role-based access for admins and patients with Spring Security and JWT.","Server-side validation across every appointment workflow."],
+  stack:["Spring Boot","Spring Security","JWT","PostgreSQL","React"],
+  gh:"https://github.com/Jagruti2004deore/hospital-appointment-system",live:"",note:""},
+ {id:"taskflow",name:"TaskFlow",tag:"Team task management application",color:"#f59e0b",
+  flow:["React","JWT","FastAPI","SQLite"],
+  stats:["JWT-protected REST APIs","Full task lifecycle"],
+  points:["People register, log in and manage tasks from a responsive web interface.","Protected REST APIs create, read, update the status of and delete tasks."],
+  stack:["Python","FastAPI","React","TypeScript","SQLite","JWT","Tailwind CSS"],
+  gh:"https://github.com/Jagruti2004deore/TaskFlow",live:"",note:""}
+];
+const EXPERIENCE = [
+ {role:"Software Developer Intern, CVFrameIQ",when:"Mar 2026 to May 2026",pts:["Built Python applications with modular, reusable code and a clear project structure.","Wrote technical documentation and ran functional and integration tests for QA."]},
+ {role:"Software Developer Intern, Innotronix Labs, Pune",when:"Sep 2025 to Nov 2025",pts:["Resolved 20+ production bugs in a live React, TypeScript and Node.js dashboard and cut downtime by 15%.","Integrated MinIO object storage and tuned API handling for an estimated 20% throughput gain.","Shipped 3+ features connecting React components to REST APIs in Agile sprints."]},
+ {role:"B.Tech in Computer Science Engineering, Sandip University, Nashik",when:"2023 to 2026, CGPA 8.63",pts:["Diploma in Electronics and Telecommunication Engineering, Government Polytechnic, Nashik (2020 to 2023)."]}
+];
+const SKILLS = {
+ "Backend":["Java","Spring Boot","Spring Security","Spring AI","Hibernate/JPA","FastAPI","Node.js","REST APIs","JWT/RBAC"],
+ "GenAI and agents":["LangGraph","LangChain","RAG","Tool calling","Structured output","Ollama","Groq","Pinecone","LLM evaluation"],
+ "Frontend":["React.js","TypeScript","Vite","Tailwind CSS","Bootstrap","HTML5 and CSS3"],
+ "Data":["PostgreSQL","MySQL","MongoDB","SQLite"],
+ "DevOps and testing":["Docker","GitHub Actions","Maven","pytest","Vitest","Postman","Vercel","Render"]
+};
+/* ===== end of content ===== */
+
+const $=s=>document.querySelector(s);
+if(RESUME_URL){const b=$('#resumeBtn');b.href=RESUME_URL;b.hidden=false}
+const chips=a=>a.map(x=>`<span>${x}</span>`).join('');
+$('#projGrid').innerHTML=PROJECTS.map((p,i)=>`<button class="card" style="--c:${p.color}" data-i="${i}"><h3>${p.name}</h3><p>${p.tag}</p></button>`).join('');
+$('#xp').innerHTML=EXPERIENCE.map(e=>`<div class="card"><h3 style="font-size:20px">${e.role}</h3><small>${e.when}</small><ul>${e.pts.map(x=>`<li>${x}</li>`).join('')}</ul></div>`).join('');
+$('#sk').innerHTML=Object.entries(SKILLS).map(([k,v])=>`<div><b>${k}</b><div class="chips" style="display:flex">${chips(v)}</div></div>`).join('');
+
+let focused=-1;
+function openP(i){
+  const p=PROJECTS[i];focused=i;
+  $('#pbody').innerHTML=`<div style="--c:${p.color}"><div class="bar"></div><h2>${p.name}</h2><p class="sub">${p.tag}</p>
+  <div class="flow">${p.flow.map((f,k)=>(k?'<b>›</b>':'')+`<span>${f}</span>`).join('')}</div>
+  <div class="stats">${p.stats.map(s=>`<span>${s}</span>`).join('')}</div>
+  <ul>${p.points.map(s=>`<li>${s}</li>`).join('')}</ul><div class="chips">${chips(p.stack)}</div>
+  ${p.note?`<p class="note">${p.note}</p>`:''}
+  <div class="btns" style="margin-top:18px">${p.live?`<a class="btn main" href="${p.live}" target="_blank" rel="noopener">Open live app</a>`:''}<a class="btn" href="${p.gh}" target="_blank" rel="noopener">View code</a></div></div>`;
+  document.body.classList.add('focus');
+  document.querySelectorAll('.lbl').forEach((l,k)=>l.classList.toggle('on',k===i));
+  if(scrollY>40)scrollTo({top:0,behavior:'smooth'});
+}
+function closeP(){focused=-1;document.body.classList.remove('focus');document.querySelectorAll('.lbl').forEach(l=>l.classList.remove('on'))}
+$('#close').onclick=closeP;
+addEventListener('keydown',e=>{if(e.key==='Escape')closeP()});
+$('#projGrid').addEventListener('click',e=>{const b=e.target.closest('[data-i]');if(b)openP(+b.dataset.i)});
+
+/* ===== 3D scene ===== */
+let renderer=null;
+try{renderer=new THREE.WebGLRenderer({canvas:$('#c'),antialias:true,alpha:true})}catch(e){}
+if(!renderer){document.body.classList.add('nogl')}
+else{
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+renderer.setPixelRatio(Math.min(devicePixelRatio,1.75));
+const scene=new THREE.Scene();
+const camera=new THREE.PerspectiveCamera(50,1,.1,200);
+const lbBox=$('#labels');
+function glowTex(){const c=document.createElement('canvas');c.width=c.height=64;const g=c.getContext('2d'),r=g.createRadialGradient(32,32,0,32,32,32);r.addColorStop(0,'rgba(255,255,255,1)');r.addColorStop(.3,'rgba(255,255,255,.3)');r.addColorStop(1,'rgba(255,255,255,0)');g.fillStyle=r;g.fillRect(0,0,64,64);return new THREE.CanvasTexture(c)}
+const GT=glowTex();
+const glow=(col,s)=>{const m=new THREE.Sprite(new THREE.SpriteMaterial({map:GT,color:col,blending:THREE.AdditiveBlending,transparent:true,depthWrite:false}));m.scale.set(s,s,1);return m};
+
+const orbit=new THREE.Group();scene.add(orbit);
+const core=new THREE.Mesh(new THREE.IcosahedronGeometry(1.15,1),new THREE.MeshBasicMaterial({color:0x22d3ee,wireframe:true,transparent:true,opacity:.8}));
+const coreIn=new THREE.Mesh(new THREE.SphereGeometry(.55,24,24),new THREE.MeshBasicMaterial({color:0xe9edf7}));
+scene.add(core,coreIn);const cg=glow(0x22d3ee,6.5);scene.add(cg);
+
+const R=4.3,nodes=[],packets=[],hit=[];
+PROJECTS.forEach((p,i)=>{
+  const a=i/PROJECTS.length*Math.PI*2+.6,pos=new THREE.Vector3(Math.cos(a)*R,Math.sin(i*1.9)*1.2,Math.sin(a)*R);
+  const col=new THREE.Color(p.color);
+  const mesh=new THREE.Mesh(new THREE.SphereGeometry(.46,28,28),new THREE.MeshBasicMaterial({color:col}));mesh.position.copy(pos);mesh.userData.i=i;
+  const ring=new THREE.Mesh(new THREE.TorusGeometry(.78,.018,8,64),new THREE.MeshBasicMaterial({color:col,transparent:true,opacity:.7}));ring.position.copy(pos);ring.rotation.x=1.2;
+  const g=glow(col,3.4);g.position.copy(pos);
+  const line=new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(),pos]),new THREE.LineBasicMaterial({color:col,transparent:true,opacity:.35}));
+  orbit.add(mesh,ring,g,line);hit.push(mesh);nodes.push({mesh,ring,g});
+  for(let k=0;k<3;k++){const pk=new THREE.Mesh(new THREE.SphereGeometry(.07,8,8),new THREE.MeshBasicMaterial({color:k%2?0xffffff:col}));orbit.add(pk);packets.push({m:pk,t:k/3,dir:k%2?-1:1,end:pos,sp:.22+Math.random()*.15})}
+  const l=document.createElement('button');l.className='lbl';l.textContent=p.name;l.style.setProperty('--c',p.color);l.onclick=()=>openP(i);lbBox.appendChild(l);nodes[i].l=l;
+});
+const N=window.innerWidth<700?350:800,sp=new Float32Array(N*3);
+for(let i=0;i<N;i++){const r=25+Math.random()*60,t=Math.random()*6.283,u=Math.acos(2*Math.random()-1);sp.set([r*Math.sin(u)*Math.cos(t),r*Math.sin(u)*Math.sin(t),r*Math.cos(u)],i*3)}
+const sg=new THREE.BufferGeometry();sg.setAttribute('position',new THREE.BufferAttribute(sp,3));
+const stars=new THREE.Points(sg,new THREE.PointsMaterial({color:0x9fb4ff,size:.14,transparent:true,opacity:.7,depthWrite:false}));scene.add(stars);
+
+let W=1,H=1,mx=0,my=0,speed=.12,vx=0,vy=0,hov=-1;
+const ray=new THREE.Raycaster(),ptr=new THREE.Vector2(),canvas=$('#c');
+function size(){W=innerWidth;H=innerHeight;renderer.setSize(W,H,false);camera.aspect=W/H;camera.updateProjectionMatrix()}
+addEventListener('resize',size);size();
+function pick(e){ptr.set(e.clientX/W*2-1,-(e.clientY/H)*2+1);ray.setFromCamera(ptr,camera);const h=ray.intersectObjects(hit);return h.length?h[0].object.userData.i:-1}
+addEventListener('pointermove',e=>{mx=e.clientX/W*2-1;my=e.clientY/H*2-1;if(e.target===canvas){hov=pick(e);canvas.style.cursor=hov>=0?'pointer':'default'}});
+canvas.addEventListener('click',e=>{const i=pick(e);if(i>=0)openP(i);else if(focused>=0)closeP()});
+
+const tp=new THREE.Vector3(),tl=new THREE.Vector3(),lk=new THREE.Vector3(),wp=new THREE.Vector3(),clock=new THREE.Clock();
+camera.position.set(0,1.6,12);
+function tick(){
+  requestAnimationFrame(tick);
+  const dt=Math.min(clock.getDelta(),.05),t=clock.elapsedTime,wide=W>900,z=W/H<1?17:11.5;
+  speed+=((focused<0?.12:0)-speed)*dt*3;orbit.rotation.y+=speed*dt*(reduce?.3:1);
+  core.rotation.y+=dt*.25;core.rotation.x+=dt*.12;cg.material.opacity=.8+Math.sin(t*2)*.15;
+  nodes.forEach((n,i)=>{n.ring.rotation.z+=dt*.8;const s=(hov===i||focused===i)?1.25:1;n.mesh.scale.lerp(new THREE.Vector3(s,s,s),dt*8);n.g.scale.setScalar(3.4+Math.sin(t*2+i)*.25)});
+  packets.forEach(p=>{p.t=(p.t+dt*p.sp)%1;const f=p.dir>0?p.t:1-p.t;p.m.position.copy(p.end).multiplyScalar(f)});
+  stars.rotation.y+=dt*.01;
+  if(focused>=0){nodes[focused].mesh.getWorldPosition(wp);const out=wp.clone().setY(0).normalize();tp.copy(wp).addScaledVector(out,3.6).add(new THREE.Vector3(0,.6,0));tl.copy(wp)}
+  else{tp.set(mx*1.4,1.6-my*.8,z);tl.set(0,0,0)}
+  camera.position.lerp(tp,dt*2.4);lk.lerp(tl,dt*3);camera.lookAt(lk);
+  const tvx=focused>=0?(wide?W*.2:0):(wide?-W*.17:0),tvy=focused>=0?(wide?0:H*.2):(wide?0:-H*.14);
+  vx+=(tvx-vx)*dt*3;vy+=(tvy-vy)*dt*3;camera.setViewOffset(W,H,vx,vy,W,H);camera.updateMatrixWorld();
+  nodes.forEach(n=>{n.mesh.getWorldPosition(wp);wp.y-=.95;wp.project(camera);n.l.style.transform=`translate(${(wp.x*.5+.5)*W}px,${(-wp.y*.5+.5)*H}px) translate(-50%,0)`;n.l.style.display=wp.z>1?'none':''});
+  canvas.style.opacity=focused>=0?1:Math.max(.12,1-scrollY/(H*.85));
+  renderer.render(scene,camera);
+}
+tick();
+}
+</script>
+</body>
+</html>
